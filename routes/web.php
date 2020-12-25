@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,7 +18,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Auth::routes();
 
-Route::group(['prefix' => 'admin'], function () {
-    Voyager::routes();
-});
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Auth::routes();
+
+Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/products', [App\Http\Controllers\ProductController::class, 'index'])->name('products');
+Route::get('/{cat}/products', [App\Http\Controllers\ProductController::class, 'categorie_product'])->name('catgorie');
