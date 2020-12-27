@@ -35,3 +35,4 @@ Route::get('/{cat}/products', [App\Http\Controllers\ProductController::class, 'c
 Route::get('/contact', [App\Http\Controllers\ContactController::class, 'index'])->name('contact');
 Route::post('/contact', [App\Http\Controllers\ContactController::class, 'add'])->name('send-contact');
 
+
