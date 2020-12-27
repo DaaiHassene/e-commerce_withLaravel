@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ContactController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,6 +21,10 @@ Route::get('/', function () {
 
 Auth::routes();
 
+Route::group(['prefix' => 'admin'], function () {
+    Voyager::routes();
+});
+
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Auth::routes();
@@ -27,3 +32,6 @@ Auth::routes();
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/products', [App\Http\Controllers\ProductController::class, 'index'])->name('products');
 Route::get('/{cat}/products', [App\Http\Controllers\ProductController::class, 'categorie_product'])->name('catgorie');
+Route::get('/contact', [App\Http\Controllers\ContactController::class, 'index'])->name('contact');
+Route::post('/contact', [App\Http\Controllers\ContactController::class, 'add'])->name('send-contact');
+
