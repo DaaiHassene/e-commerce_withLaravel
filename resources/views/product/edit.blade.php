@@ -34,13 +34,13 @@
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
-                    <strong>Quantity</strong>
+                    <strong>Quantity:</strong>
                     <input type="text" name="qte" value="" class="form-control" placeholder="qte" style="width:40%;">
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
-                    <strong>Initial Price : </strong>
+                    <strong>Initial Price: </strong>
                     <input type="number" name="initial_price" class="form-control" placeholder=""
                         value="" style="width:40%;">
                 </div>
@@ -48,7 +48,7 @@
             
         <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
-                    <strong>Region : </strong>
+                    <strong>Region: </strong>
                     <input type="text" name="region" class="form-control" placeholder=""
                         value=""style="width:40%;">
                 </div>
@@ -56,7 +56,7 @@
             
         <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
-                    <strong>Adresse : </strong>
+                    <strong>Adresse: </strong>
                     <input type="text" name="adress" class="form-control" placeholder=""
                         value=""style="width:40%;">
                 </div>
@@ -86,7 +86,7 @@
             
         </div>
             <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn btn-primary">Edit Product</button>
             </div>
         </div>
 

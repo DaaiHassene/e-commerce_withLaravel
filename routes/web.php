@@ -6,6 +6,8 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\HomeController;
 
 use App\Http\Controllers\ContactController;
+use Illuminate\Support\Facades\Auth;
+
 
 
 /*
@@ -51,7 +53,7 @@ Route::delete('products/{id}', [App\Http\Controllers\ProductController::class, '
  
 Route::get('products/{id}',['as'=>'product.view','uses'=>'ProductController@view']);
 
-Route::get('products/{id}', [App\Http\Controllers\ProductController::class, 'show']);
+Route::get('products/{id}', [App\Http\Controllers\ProductController::class, 'show'])->name('show_product');
 
 Route::get('/contact', [App\Http\Controllers\ContactController::class, 'index'])->name('contact');
 Route::post('/contact', [App\Http\Controllers\ContactController::class, 'add'])->name('send-contact');

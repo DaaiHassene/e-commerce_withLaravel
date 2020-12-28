@@ -17,6 +17,10 @@ class ProductController extends Controller
             "products"=>$produits
         ]);
     }
+    public function show(Product $product)
+    {
+        return view('product.show', compact('product'));
+    }
 
     function categorie_product($cat)
     {
