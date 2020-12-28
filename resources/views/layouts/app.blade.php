@@ -145,7 +145,7 @@ $(document).ready(function () {
       </ol>
     </li>
     <!-- end sub menu -->
-    <li><a href="contact.html">Contact</a></li>
+    <li><a href="{{route('contact')}}">Contact</a></li>
     
     @guest
                             @if (Route::has('login'))
@@ -159,22 +159,12 @@ $(document).ready(function () {
                                 </li>
                             @endif
                         @else
-                            <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }}
+                            <li class="nav-item ">
+                                <a i class="nav-link" href="{{route('logout')}}" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    LOG OUT({{ Auth::user()->name }})
                                 </a>
 
-                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
-                                    </a>
-
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                        @csrf
-                                    </form>
-                                </div>
+                            
                             </li>
                         @endguest
   </ol>

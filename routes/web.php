@@ -2,7 +2,11 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
+
 use App\Http\Controllers\HomeController;
+
+use App\Http\Controllers\ContactController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -22,6 +26,9 @@ Route::get('/', function () {
 Auth::routes();
 
 
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
 Route::group(['prefix' => 'admin'], function()
 {
     Voyager::routes();
@@ -31,6 +38,7 @@ Route::group(['prefix' => 'admin'], function()
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/{cat}/products', [App\Http\Controllers\ProductController::class, 'categorie_product'])->name('catgorie');
+
 //Route::resource('products', ProductController::class);
 
 Route::get('products', [App\Http\Controllers\ProductController::class, 'index']);
@@ -44,3 +52,9 @@ Route::delete('products/{id}', [App\Http\Controllers\ProductController::class, '
 Route::get('products/{id}',['as'=>'product.view','uses'=>'ProductController@view']);
 
 Route::get('products/{id}', [App\Http\Controllers\ProductController::class, 'show']);
+
+Route::get('/contact', [App\Http\Controllers\ContactController::class, 'index'])->name('contact');
+Route::post('/contact', [App\Http\Controllers\ContactController::class, 'add'])->name('send-contact');
+
+
+
