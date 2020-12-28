@@ -34,7 +34,7 @@
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
-                    <strong>Quantité</strong>
+                    <strong>Quantity</strong>
                     <input type="text" name="qte" value="" class="form-control" placeholder="qte" style="width:40%;">
                 </div>
             </div>
@@ -70,15 +70,7 @@
                         value="0" >NO
                 </div>
             </div>
-            
 
-            <div class="col-xs-12 col-sm-12 col-md-12">
-                <div class="form-group">
-                    <strong>Region : </strong>
-                    <input type="text" name="sub_category_id" class="form-control" placeholder=""
-                        value=""style="width:40%;">
-                </div>
-            </div>
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group" style="width:40%;">
                     <strong>Sub Category : </strong>

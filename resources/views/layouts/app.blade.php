@@ -159,14 +159,18 @@ $(document).ready(function () {
                                 </li>
                             @endif
                         @else
+                        <li class="nav-item ">
+                                <a i class="nav-link" href="{{ route('voyager.dashboard')}}" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    {{__('Dashboard')}}
+                                </a>
+                            </li>
                             <li class="nav-item ">
-                                <a i class="nav-link" href="{{route('logout')}}" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                <a i class="nav-link" href="{{ route('logout')}}" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     LOG OUT({{ Auth::user()->name }})
                                 </a>
-
-                            
                             </li>
                         @endguest
+
   </ol>
 </div>
                             

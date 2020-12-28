@@ -58,3 +58,7 @@ Route::post('/contact', [App\Http\Controllers\ContactController::class, 'add'])-
 
 
 
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
