@@ -32,8 +32,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::group(['prefix' => 'admin'], function()
 {
     Voyager::routes();
-    Route::get('admin', 'HomeController@admin')->middleware('admin');
-
+  
 });
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
@@ -41,7 +40,7 @@ Route::get('/{cat}/products', [App\Http\Controllers\ProductController::class, 'c
 
 //Route::resource('products', ProductController::class);
 
-Route::get('products', [App\Http\Controllers\ProductController::class, 'index']);
+Route::get('products', [App\Http\Controllers\ProductController::class, 'index'])->name('products');
 
 Route::post('products/create', [App\Http\Controllers\ProductController::class, 'store']);
 
@@ -51,10 +50,11 @@ Route::delete('products/{id}', [App\Http\Controllers\ProductController::class, '
  
 Route::get('products/{id}',['as'=>'product.view','uses'=>'ProductController@view']);
 
-Route::get('products/{id}', [App\Http\Controllers\ProductController::class, 'show']);
+Route::get('products/{id}', [App\Http\Controllers\ProductController::class, 'show'])->name("show_product");
 
 Route::get('/contact', [App\Http\Controllers\ContactController::class, 'index'])->name('contact');
 Route::post('/contact', [App\Http\Controllers\ContactController::class, 'add'])->name('send-contact');
+Route::post('products/edit/{id}', [App\Http\Controllers\ProductController::class, 'update'])->name('product_update');
 
 
 

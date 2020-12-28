@@ -974,20 +974,20 @@ a.nivo-prevNav {background:url(../img/slide-next-prev.png) left no-repeat;left:5
 #prev a:hover,#next a:hover {
 	text-decoration:none!important;
 }
-.hvrbox .hvrbox-layer_scale {
-	border-radius: 50%;
-	-moz-transform: scale(0);
-	-webkit-transform: scale(0);
-	-ms-transform: scale(0);
-	transform: scale(0);
+
+
+.hvrbox .hvrbox-layer_slideup {
+	-moz-transform: translateY(100%);
+	-webkit-transform: translateY(100%);
+	-ms-transform: translateY(100%);
+	transform: translateY(100%);
 }
-.hvrbox:hover .hvrbox-layer_scale,
-.hvrbox.active .hvrbox-layer_scale {
-	border-radius: 0%;
-	-moz-transform: scale(1);
-	-webkit-transform: scale(1);
-	-ms-transform: scale(1);
-	transform: scale(1);
+.hvrbox:hover .hvrbox-layer_slideup,
+.hvrbox.active .hvrbox-layer_slideup {
+	-moz-transform: translateY(0);
+	-webkit-transform: translateY(0);
+	-ms-transform: translateY(0);
+	transform: translateY(0);
 }
 
 /*-------------------------------------------------------------------------------------------------*/

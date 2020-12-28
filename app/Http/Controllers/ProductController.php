@@ -26,7 +26,10 @@ class ProductController extends Controller
      */
     public function create()
     {
-        return view('product.create');
+        $sub_categories=SubCategory::all();
+        return view('product.create',[
+            "sub_categories"=>$sub_categories
+        ]);
     }
     /**
      * Store a newly created resource in storage.
@@ -59,9 +62,12 @@ class ProductController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit(Product $product)
-    {   $sub_categories = SubCategory::all();
+    {   
+        $p = Product::where('ref',$product);
+        
+        $sub_categories = SubCategory::all();
         return view('product.edit', [
-            "product"=>$product,
+            "product"=>$p,
             "sub_categories"=>$sub_categories
         ]);
     }
