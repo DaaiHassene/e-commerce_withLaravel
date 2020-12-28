@@ -133,7 +133,7 @@ $(document).ready(function () {
 
     
   
-    <li><a href="{{route('products')}}">My products</a></li>
+    <li><a href="#">My products</a></li>
     <li><a href="#">SHOP</a>
       <!-- sub menu -->
       <ol>
